@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishwa Poornima Yoga — Design & Asset Showcase</title>
+  <style>
+    :root {
+      --color-midnight: #0B132B;
+      --color-deep-blue: #1C2541;
+      --color-forest: #16302B;
+      --color-ivory: #FDFBF7;
+      --color-gold: #D4AF37;
+      --color-gold-light: #FFDF73;
+      --color-text-muted: #A3B18A;
+      --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-midnight);
+      color: var(--color-ivory);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      background-image: url('assets/ui/paper-texture.webp');
+      background-blend-mode: overlay;
+    }
+
+    /* Navigation */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: linear-gradient(to bottom, rgba(11, 19, 43, 0.8), transparent);
+    }
+
+    .logo-container img {
+      height: 48px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-ivory);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: url('assets/hero/hero-sunrise.webp');
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 4rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(11, 19, 43, 0.88) 0%, rgba(11, 19, 43, 0.6) 45%, rgba(11, 19, 43, 0.2) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 650px;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-gold);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-tagline img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      color: var(--color-ivory);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    }
+
+    .hero h1 span {
+      color: var(--color-gold-light);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #E0E7E9;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(135deg, var(--color-gold), #B38F24);
+      color: #1A1A1A;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.6);
+    }
+
+    .hero-figure {
+      position: absolute;
+      right: 5%;
+      bottom: 0;
+      z-index: 5;
+      height: 85%;
+      max-height: 800px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+    }
+
+    /* Section Styling */
+    section {
+      padding: 6rem 4rem;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      color: var(--color-ivory);
+      margin-bottom: 0.8rem;
+    }
+
+    .gold-divider {
+      display: block;
+      margin: 1rem auto;
+      max-width: 320px;
+      height: auto;
+    }
+
+    /* Programmes Grid */
+    .programmes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .prog-card {
+      background: rgba(28, 37, 65, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+      backdrop-filter: blur(8px);
+    }
+
+    .prog-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.6);
+    }
+
+    .prog-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .prog-info {
+      padding: 1.5rem;
+    }
+
+    .prog-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Surya Namaskar Section */
+    .surya-section {
+      background: linear-gradient(180deg, var(--color-midnight) 0%, var(--color-forest) 100%);
+    }
+
+    .surya-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .surya-card {
+      background: rgba(11, 19, 43, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 0.8rem;
+    }
+
+    .surya-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #0B132B;
+    }
+
+    .surya-card span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      margin-top: 0.5rem;
+    }
+
+    /* Meditation Environment */
+    .meditation-showcase {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('assets/environments/meditation-lotus.webp');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      border-radius: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .meditation-box {
+      background: rgba(11, 25, 44, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 3rem;
+      border-radius: 12px;
+      max-width: 600px;
+      backdrop-filter: blur(12px);
+    }
+
+    /* Organisation Section */
+    .org-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .instructor-photo {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--color-gold);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    .instructor-photo img {
+      width: 100%;
+      display: block;
+    }
+
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-preview img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* CTA Section */
+    .cta-banner {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background-image: url('assets/environments/cta-mountain.webp');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem;
+      border-radius: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .cta-content {
+      max-width: 550px;
+      background: rgba(11, 19, 43, 0.85);
+      padding: 3rem;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      font-size: 0.9rem;
+      color: #8C9BA5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+      <img src="assets/brand/logo.svg" alt="Vishwa Poornima Yoga">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#programmes">Programmes</a></li>
+      <li><a href="#surya">Surya Namaskar</a></li>
+      <li><a href="#meditation">Meditation</a></li>
+      <li><a href="#founder">About Founder</a></li>
+      <li><a href="#cta">Join Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tagline">
+        <img src="assets/ui/sun-icon.svg" alt="Surya">
+        Authentic Yoga &amp; Therapy &bull; 30+ Years
+      </div>
+      <h1>Discover Your <span>Inner Self</span></h1>
+      <p>Transform body, mind, and spirit with authentic yogic breathing, therapeutic healing, and classical master-led training across Bangalore and globally online.</p>
+      <a href="#cta" class="btn-gold">Explore Programmes</a>
+    </div>
+    <img src="assets/hero/hero-yogi-transparent.webp" alt="Yogi in Meditation" class="hero-figure">
+  </section>
+
+  <!-- Programmes Grid -->
+  <section id="programmes">
+    <div class="section-header">
+      <h2>Coordinated Programmes</h2>
+      <img src="assets/ui/gold-divider.svg" alt="Divider" class="gold-divider">
+      <p>Six specialized training paths rooted in authentic tradition and clinical yoga therapy.</p>
+    </div>
+
+    <div class="programmes-grid">
+      <div class="prog-card">
+        <img src="assets/programmes/yoga.webp" alt="Yoga Classes">
+        <div class="prog-info">
+          <h3>Yoga Classes</h3>
+          <p>Daily group and personal sessions blending asana alignment, pranayama, and holistic vitality.</p>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <img src="assets/programmes/surya.webp" alt="Surya Namaskar">
+        <div class="prog-info">
+          <h3>Surya Namaskar</h3>
+          <p>Classical 12-stage solar sequence activating core stamina, spinal flexibility, and vital prana.</p>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <img src="assets/programmes/meditation.webp" alt="Meditation Sanctuary">
+        <div class="prog-info">
+          <h3>Meditation Classes</h3>
+          <p>Deep mindfulness, chakra dhyana, and mental tranquility guided by seasoned yoga acharyas.</p>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <img src="assets/programmes/therapy.webp" alt="Yoga Therapy">
+        <div class="prog-info">
+          <h3>Yoga Therapy</h3>
+          <p>Therapeutic recovery for spinal back pain, migraine, joint ailments, diabetes, and hypertension.</p>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <img src="assets/programmes/training.webp" alt="Teacher Training">
+        <div class="prog-info">
+          <h3>Teacher Training</h3>
+          <p>Comprehensive certification (YIC, DYT) shaping world-class instructors and certified yoga therapists.</p>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <img src="assets/programmes/corporate.webp" alt="Corporate Yoga">
+        <div class="prog-info">
+          <h3>Corporate Yoga &amp; CEOs</h3>
+          <p>Executive stress-resilience, ergonomic posture correction, and peak performance mindfulness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Surya Namaskar 12-Step Sequence -->
+  <section class="surya-section" id="surya">
+    <div class="section-header">
+      <h2>Surya Namaskar Sequence</h2>
+      <img src="assets/ui/gold-divider.svg" alt="Divider" class="gold-divider">
+      <p>The 12 sacred postures performed in harmony with the solar cycle.</p>
+    </div>
+
+    <div class="surya-grid">
+      <div class="surya-card"><img src="assets/poses/surya-01.webp" alt="Pranamasana"><span>1. Pranamasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-02.webp" alt="Hastauttanasana"><span>2. Hastauttanasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-03.webp" alt="Hastapadasana"><span>3. Hastapadasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-04.webp" alt="Ashwa Sanchalanasana"><span>4. Ashwa Sanchalana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-05.webp" alt="Dandasana"><span>5. Dandasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-06.webp" alt="Ashtanga Namaskara"><span>6. Ashtanga Namaskar</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-07.webp" alt="Bhujangasana"><span>7. Bhujangasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-08.webp" alt="Adho Mukha Svanasana"><span>8. Adho Mukha</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-09.webp" alt="Ashwa Sanchalanasana"><span>9. Ashwa Sanchalana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-10.webp" alt="Hastapadasana"><span>10. Hastapadasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-11.webp" alt="Hastauttanasana"><span>11. Hastauttanasana</span></div>
+      <div class="surya-card"><img src="assets/poses/surya-12.webp" alt="Pranamasana"><span>12. Pranamasana</span></div>
+    </div>
+  </section>
+
+  <!-- Meditation Environment -->
+  <section id="meditation">
+    <div class="meditation-showcase">
+      <div class="meditation-box">
+        <img src="assets/ui/lotus-icon.svg" alt="Lotus" style="width: 50px; height: 50px; margin-bottom: 1rem;">
+        <h2>Meditation Sanctuary</h2>
+        <p>Step into a space of absolute stillness and reflective calm. Our luminous meditation techniques guide you past mental agitation to pure inner awareness.</p>
+        <a href="#cta" class="btn-gold" style="margin-top: 1.5rem;">Begin Dhyana</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & Genuine Photography -->
+  <section id="founder">
+    <div class="section-header">
+      <h2>Founder &amp; Authenticity</h2>
+      <img src="assets/ui/gold-divider.svg" alt="Divider" class="gold-divider">
+      <p>Direct lineage, 35+ years of dedicated practice, and proven results.</p>
+    </div>
+
+    <div class="org-grid">
+      <div class="instructor-photo">
+        <img src="assets/organisation/instructor-portrait.webp" alt="Dr. VENKATESH T">
+      </div>
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-gold-light); margin-bottom: 0.5rem;">Dr. VENKATESH T</h3>
+        <p style="color: var(--color-gold); font-size: 0.95rem; margin-bottom: 1.2rem;">PhD (Yoga) &bull; MSc (PsyN) &bull; MBA (HR) &bull; Yogacharya</p>
+        <p style="color: #D3DFEE; margin-bottom: 1rem;">Founder of Vishwa Poornima Yoga Centre, Dr. Venkatesh T has dedicated over 35 years to classical yoga and natural therapeutics under the guidance of renowned masters.</p>
+        <p style="color: #D3DFEE; margin-bottom: 1.5rem;">He has trained more than 100 certified yoga therapists and guided thousands of students to physical healing, gold-medal national championships, and deep inner peace.</p>
+        
+        <h4 style="color: var(--color-gold); margin-bottom: 0.8rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Authentic Studio &amp; Classes</h4>
+        <div class="gallery-preview">
+          <img src="assets/organisation/centre-studio.webp" alt="Studio Hall">
+          <img src="assets/organisation/centre-class.webp" alt="Yoga Class">
+          <img src="assets/organisation/workshop.webp" alt="Graduation Workshop">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call To Action -->
+  <section id="cta">
+    <div class="cta-banner">
+      <div class="cta-content">
+        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-ivory); margin-bottom: 1rem;">Begin Your Journey Today</h2>
+        <p style="color: #D3DFEE; margin-bottom: 2rem;">Join daily online classes globally or visit our 3 studios in Bangalore (Indiranagar, New Thippasandra, Murugeshpalya).</p>
+        <a href="mailto:info@vpyoga.com" class="btn-gold">Register for Live Classes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="assets/brand/logo.svg" alt="Vishwa Poornima Yoga" style="height: 36px; margin-bottom: 1rem; opacity: 0.8;">
+    <p>&copy; 2026 Vishwa Poornima Yoga Centre. All Rights Reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #6C7A89;">Design System &amp; Visual Asset Package</p>
+  </footer>
+
+</body>
+</html>

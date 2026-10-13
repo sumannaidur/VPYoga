@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishwa Poornima Yoga Centre | Yoga classes, Surya Namaskar and meditation in Bengaluru</title>
+<meta name="description" content="Yoga practice, mindful breathing, meditation and guided learning at Vishwa Poornima Yoga Centre.">
+<link rel="icon" href="/assets/ui/lotus-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#home" aria-label="Vishwa Poornima Yoga Centre, home"><img src="/assets/brand/logo.svg" alt="Vishwa Poornima Yoga Centre" width="170" height="55"></a>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span><i></i></button>
+  <nav id="menu" class="nav__menu" aria-label="Main">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#programme-yoga">Yoga Classes</a><a href="#programmes">Programmes</a>
+    <a href="#surya">Surya Namaskar</a><a href="#meditation">Meditation</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    <button class="btn btn--gold" data-enquire="">Enquire Now</button>
+  </nav>
+</header>
+<ol class="rail" aria-label="Page progress"></ol>
+
+<main id="main">
+<section class="hero" id="home" data-rail="Awaken" data-photo-scope>
+  <div class="hero__stage">
+    <img class="hero__bg" src="/assets/hero/hero-sunrise.webp" alt="" fetchpriority="high" data-photo="yoga-silhouette" data-alt="none">
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__mist hero__mist--a" aria-hidden="true"></div>
+    <img class="hero__yogi" src="/assets/hero/hero-yogi-transparent.webp" alt="Stylised figure meditating in lotus pose before a rising sun" width="896" height="1200">
+    <canvas class="fx" id="fx-hero" aria-hidden="true"></canvas>
+    <div class="hero__mist hero__mist--b" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1>Discover the Art of Living Through Yoga</h1>
+      <p>At Vishwa Poornima Yoga Centre, explore yoga practices, mindful breathing, meditation, and guided learning designed to help you build a consistent practice.</p>
+      <div class="row"><a class="btn btn--gold" href="#programmes">Explore Programmes</a><a class="btn btn--ghost" href="#about">Watch Our Story</a></div>
+    </div>
+    <a class="hero__scroll" href="#journey"><span class="mouse" aria-hidden="true"></span>Scroll to begin your journey</a>
+  </div>
+</section>
+
+<section class="journey" id="journey" data-rail="Practice">
+  <div class="journey__bg" aria-hidden="true"></div>
+  <div class="wrap journey__grid">
+    <div class="journey__copy">
+      <h2>More Than Physical Exercise</h2>
+      <p>Yoga brings balance to the body, calm to the mind and clarity to your day. A steady practice, guided with care, can become part of everyday life.</p>
+      <a class="btn btn--gold" href="#programmes">Learn More</a>
+    </div>
+    <figure class="journey__fig"><img src="/assets/poses/pose-warrior.webp" alt="" data-alt-fallback="Stylised figure in Warrior II pose on a wooden platform" data-photo="hero-meditation" data-sizes="(max-width:1000px) 80vw, 34vw" width="896" height="1200" loading="lazy"></figure>
+    <ul class="benefits">
+      <li>Physical well-being</li><li>A calmer mind</li><li>Better focus</li><li>A balanced lifestyle</li>
+    </ul>
+  </div>
+</section>
+
+<section class="programmes" id="programmes" data-rail="Programmes">
+  <canvas class="fx" id="fx-orbs" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h2>Find the Right Practice for You</h2>
+    <p class="lede">Explore our yoga programmes. Tell us about your goals and we will suggest where to start.</p>
+    <ul class="orbs"></ul>
+  </div>
+</section>
+
+<section class="surya" id="surya" data-rail="Surya Namaskar" aria-labelledby="surya-h">
+  <div class="surya__stage">
+    <div class="surya__sun" aria-hidden="true"></div>
+    <canvas class="fx" id="fx-surya" aria-hidden="true"></canvas>
+    <div class="wrap surya__grid">
+      <div class="surya__intro">
+        <h2 id="surya-h">Surya Namaskar</h2>
+        <p class="surya__sub">12 steps, one flowing sequence</p>
+        <p>Learn the twelve positions of the sun salutation. Scroll to move through each step, or use the buttons.</p>
+        <a class="btn btn--gold" href="#" data-enquire="Surya Namaskar">Ask about Surya Namaskar</a>
+      </div>
+      <div class="surya__fig"><div class="surya__plate"></div><div class="surya__imgs"></div></div>
+      <aside class="surya__card" aria-live="polite" aria-atomic="true">
+        <p class="surya__count"><b id="s-n">1</b> / 12</p>
+        <h3 id="s-name"></h3><p id="s-en" class="muted"></p>
+        <p class="surya__breath">Breath: <span id="s-breath"></span></p>
+        <ul id="s-tips"></ul>
+        <div class="row"><button class="btn btn--ghost" id="s-prev" aria-label="Previous step">Previous</button><button class="btn btn--gold" id="s-next">Next step</button></div>
+      </aside>
+    </div>
+    <ol class="thumbs" aria-label="Surya Namaskar steps"></ol>
+    <p class="note">Practise within your comfort and seek guidance if you have an injury or medical condition.</p>
+  </div>
+</section>
+
+<section class="med" id="meditation" data-rail="Stillness">
+  <div class="med__stage">
+    <img class="med__bg" src="/assets/environments/meditation-lotus.webp" alt="" loading="lazy">
+    <div class="med__glow" aria-hidden="true"></div>
+    <div class="med__rays" aria-hidden="true"></div>
+    <canvas class="fx" id="fx-lotus" aria-hidden="true"></canvas>
+    <div class="wrap med__grid">
+      <div class="med__copy">
+        <h2>Find Stillness Within</h2>
+        <p>Guided meditation practices to help you slow down, focus and feel more settled. No experience needed.</p>
+        <a class="btn btn--gold" href="#" data-enquire="Meditation">Explore Meditation</a>
+      </div>
+      <div class="breath">
+        <button class="breath__orb" id="breath-btn" aria-pressed="false" aria-describedby="breath-help"><span id="breath-text">Start</span></button>
+        <p id="breath-help">Optional breathing guide: inhale 4, hold 4, exhale 6. Silent. Press to start or stop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about" data-rail="Our Centre">
+  <div class="wrap about__grid">
+    <img class="about__img" src="/assets/organisation/instructor-portrait.webp" alt="Dr. Venkatesh T, founder of Vishwa Poornima Yoga Centre" width="800" height="535" loading="lazy">
+    <div>
+      <h2>A Space for Learning, Growth and Wellbeing</h2>
+      <p>Vishwa Poornima Yoga Centre is dedicated to making authentic yoga accessible to all, with experienced guidance in a supportive and welcoming environment. Classes run at studios in Indiranagar, New Thippasandra and Murugeshpalya, and online.</p>
+      <h3>Dr. Venkatesh T, Founder</h3>
+      <!-- TODO(client): bio carried over from the original index.html; confirm each credential and the years of experience. -->
+      <p class="muted">PhD (Yoga), MSc (PsyN), MBA (HR), Yogacharya. Dr. Venkatesh has taught classical yoga for over 35 years.</p>
+      <a class="btn btn--gold" href="#gallery">About Our Centre</a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <h2>Inside the Centre</h2>
+    <div class="gallery__grid">
+      <img src="/assets/organisation/centre-studio.webp" alt="The practice hall with yoga mats laid out" loading="lazy" width="2200" height="1467">
+      <img src="/assets/organisation/centre-class.webp" alt="A class in session" loading="lazy" width="800" height="533">
+      <img src="/assets/organisation/workshop.webp" alt="Teacher training certification group" loading="lazy" width="800" height="815">
+    </div>
+    <!-- Testimonials intentionally omitted: no real, approved testimonials were supplied. -->
+  </div>
+</section>
+
+<section class="cta" id="join" data-rail="Join Us">
+  <img class="cta__bg" src="/assets/environments/cta-mountain.webp" alt="" loading="lazy">
+  <canvas class="fx" id="fx-cta" aria-hidden="true"></canvas>
+  <div class="wrap cta__copy">
+    <h2>Take the First Step Towards a Healthier, Happier You</h2>
+    <p>Join our yoga classes, workshops or teacher training programmes.</p>
+    <div class="row"><button class="btn btn--gold" data-enquire="">Enquire Now</button><a class="btn btn--ghost" href="#programmes">View All Programmes</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap foot__grid">
+    <div><img src="/assets/brand/logo.svg" alt="Vishwa Poornima Yoga Centre" width="170" height="55"><p class="muted">Indiranagar, New Thippasandra and Murugeshpalya, Bengaluru, and online.</p></div>
+    <nav aria-label="Quick links"><h2>Quick links</h2><a href="#about">About</a><a href="#surya">Surya Namaskar</a><a href="#gallery">Gallery</a><a href="mailto:info@vpyoga.com">info@vpyoga.com</a></nav>
+    <nav aria-label="Programmes" class="foot__prog"><h2>Programmes</h2></nav>
+    <div><h2>Enquire</h2><button class="btn btn--gold" data-enquire="">Enquire Now</button></div>
+  </div>
+  <p class="wrap foot__legal">&copy; 2026 Vishwa Poornima Yoga Centre.</p>
+  <ul class="wrap credits" aria-label="Photo credits"></ul>
+</footer>
+
+<dialog id="enquiry" aria-labelledby="enq-h">
+  <form id="enquiry-form" novalidate>
+    <h2 id="enq-h">Enquire Now</h2>
+    <label>Your name<input id="f-name" name="name" required autocomplete="name"></label>
+    <label>Phone number<input id="f-phone" name="phone" type="tel" required autocomplete="tel"></label>
+    <label>Email (optional)<input id="f-email" name="email" type="email" autocomplete="email"></label>
+    <label>Programme<select id="f-programme" name="programme"></select></label>
+    <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+    <p id="enquiry-status" role="status"></p>
+    <div class="row"><button class="btn btn--gold" type="submit">Send by email</button><button class="btn btn--ghost" type="button" data-close>Cancel</button></div>
+  </form>
+</dialog>
+</body>
+</html>

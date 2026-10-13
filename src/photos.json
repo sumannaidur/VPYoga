@@ -1,0 +1,109 @@
+{
+  "_note": "Licensed stock photography (Pexels licence: free to use and modify, attribution appreciated). Selected from page metadata; pixels were NOT inspected by the developer, so review each in a browser and swap any that do not fit. Run scripts/fetch-photos.py to self-host (recommended for production).",
+  "photos": {
+    "yoga-silhouette": {
+      "slot": "Hero background",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/silhouette-of-man-at-daytime-1051838/",
+      "cdn": "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg",
+      "photographer": "Prasanth Inturi",
+      "photographerUrl": "https://www.pexels.com/@prasanthinturi/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Silhouette of a person practising yoga outdoors at sunrise",
+      "position": "50% 60%",
+      "local": false
+    },
+    "hero-meditation": {
+      "slot": "A journey within (figure)",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/woman-spreading-arms-and-enjoying-inner-peace-at-sunrise-4558323/",
+      "cdn": "https://images.pexels.com/photos/4558323/pexels-photo-4558323.jpeg",
+      "photographer": "ArthouseStudio",
+      "photographerUrl": "https://www.pexels.com/photo/woman-spreading-arms-and-enjoying-inner-peace-at-sunrise-4558323/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Woman meditating on a cliff at dawn with arms apart",
+      "position": "50% 55%",
+      "local": false
+    },
+    "prog-yoga": {
+      "slot": "Programme: Yoga Classes",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/group-yoga-class-in-minimalist-studio-setting-39190415/",
+      "cdn": "https://images.pexels.com/photos/39190415/pexels-photo-39190415.jpeg",
+      "photographer": "silverkblack",
+      "photographerUrl": "https://www.pexels.com/photo/group-yoga-class-in-minimalist-studio-setting-39190415/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Adults practising yoga in a minimalist studio",
+      "position": "50% 40%",
+      "local": false
+    },
+    "prog-surya": {
+      "slot": "Programme: Surya Namaskar",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/woman-stretching-in-a-park-in-sportswear-13849115/",
+      "cdn": "https://images.pexels.com/photos/13849115/pexels-photo-13849115.jpeg",
+      "photographer": "Ray Lei",
+      "photographerUrl": "https://www.pexels.com/photo/woman-stretching-in-a-park-in-sportswear-13849115/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Woman practising yoga on a park pathway",
+      "position": "50% 40%",
+      "local": false
+    },
+    "prog-meditation": {
+      "slot": "Programme: Meditation",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/woman-in-lotus-pose-3822454/",
+      "cdn": "https://images.pexels.com/photos/3822454/pexels-photo-3822454.jpeg",
+      "photographer": "Elly Fairytale",
+      "photographerUrl": "https://www.pexels.com/photo/woman-in-lotus-pose-3822454/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Woman meditating in lotus pose indoors",
+      "position": "50% 40%",
+      "local": false
+    },
+    "prog-therapy": {
+      "slot": "Programme: Yoga Therapy",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/black-woman-bending-to-leg-during-training-6303447/",
+      "cdn": "https://images.pexels.com/photos/6303447/pexels-photo-6303447.jpeg",
+      "photographer": "Klaus Nielsen",
+      "photographerUrl": "https://www.pexels.com/photo/black-woman-bending-to-leg-during-training-6303447/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Woman stretching gently on a mat",
+      "position": "50% 40%",
+      "local": false
+    },
+    "prog-training": {
+      "slot": "Programme: Teacher Training",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/group-yoga-class-in-jawa-barat-indonesia-35630584/",
+      "cdn": "https://images.pexels.com/photos/35630584/pexels-photo-35630584.jpeg",
+      "photographer": "dwirizqif",
+      "photographerUrl": "https://www.pexels.com/photo/group-yoga-class-in-jawa-barat-indonesia-35630584/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Instructor-led outdoor yoga class",
+      "position": "50% 40%",
+      "local": false
+    },
+    "prog-corporate": {
+      "slot": "Programme: Corporate Yoga",
+      "source": "pexels",
+      "page": "https://www.pexels.com/photo/woman-practicing-yoga-14133435/",
+      "cdn": "https://images.pexels.com/photos/14133435/pexels-photo-14133435.jpeg",
+      "photographer": "criticalimagery",
+      "photographerUrl": "https://www.pexels.com/photo/woman-practicing-yoga-14133435/",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "alt": "Woman practising yoga on a rooftop with a city skyline",
+      "position": "50% 40%",
+      "local": false
+    }
+  }
+}

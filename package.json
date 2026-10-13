@@ -1,0 +1,23 @@
+{
+  "name": "vishwa-poornima-yoga",
+  "version": "1.0.0",
+  "description": "This package contains the complete visual asset collection and structured design system for the **Vishwa Poornima Yoga** website redesign.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "vite": "^8.3.4"
+  },
+  "type": "module"
+}

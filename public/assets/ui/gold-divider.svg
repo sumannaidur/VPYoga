@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30" width="600" height="30" fill="none">
+  <line x1="20" y1="15" x2="260" y2="15" stroke="url(#goldL)" stroke-width="1.5"/>
+  <circle cx="280" cy="15" r="3" fill="#D4AF37"/>
+  <!-- Center lotus diamond flourish -->
+  <path d="M300 7 L308 15 L300 23 L292 15 Z" fill="#D4AF37"/>
+  <circle cx="320" cy="15" r="3" fill="#D4AF37"/>
+  <line x1="340" y1="15" x2="580" y2="15" stroke="url(#goldR)" stroke-width="1.5"/>
+  <defs>
+    <linearGradient id="goldL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="goldR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
