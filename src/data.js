@@ -2,7 +2,7 @@
 // Breath cues follow the commonly taught sequence; lineages differ (esp. steps 5-6).
 // TODO(client): have Dr. Venkatesh T confirm cues and wording before launch.
 export const PROGRAMMES = [
-  { id: 'yoga', title: 'Yoga Classes', tag: 'Strength & flexibility', img: 'yoga.webp',
+  { id: 'yoga', title: 'Yoga Classes', tag: 'Strength & Flexibility', img: 'yoga.webp',
     text: 'Group and personal sessions that combine asana, breathing practice and relaxation.' },
   { id: 'surya', title: 'Surya Namaskar', tag: 'Energy & vitality', img: 'surya.webp',
     text: 'The twelve-step sun salutation, taught with attention to posture and breath.' },
@@ -30,4 +30,4 @@ export const SURYA = [
   ['Hastauttanasana', 'Raised Arms Pose', 'Inhale', ['Rise up with the arms overhead and arch gently back.', 'Move slowly and keep the legs steady.']],
   ['Pranamasana', 'Prayer Pose', 'Exhale', ['Return to standing, palms at the chest.', 'Pause, breathe normally, then begin the next round.']],
 ].map(([name, en, breath, tips], i) => ({ n: i + 1, name, en, breath, tips,
-  img: `poses/clean/step-${String(i + 1).padStart(2, '0')}.webp` }));
+  img: `surya/thumb-${String(i + 1).padStart(2, '0')}.webp` }));

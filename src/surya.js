@@ -2,8 +2,7 @@ import { state } from './gl/state.js';
 import { SURYA } from './data.js';
 const $ = (s, r = document) => r.querySelector(s);
 
-// Build once. Image-based pose player: swap this module's `show()` for a GLB/AnimationMixer
-// driver when a rigged model with clips exists (the supplied GLB is a single cube).
+// Build once. Photographic pose player: twelve transparent cut-outs of one model, cross-faded by scroll position.
 const mandala = () => {
   const dots = SURYA.map((_, i) => { const a = (i / 12) * Math.PI * 2 - Math.PI / 2; return `<circle class="dot" cx="${(46 * Math.cos(a)).toFixed(2)}" cy="${(46 * Math.sin(a)).toFixed(2)}" r="1.7"/>`; }).join('');
   const petals = SURYA.map((_, i) => `<ellipse cx="0" cy="-33" rx="3.4" ry="9" transform="rotate(${i * 30})"/>`).join('');
@@ -11,7 +10,7 @@ const mandala = () => {
 };
 export function buildSurya() {
   $('.surya__fig').insertAdjacentHTML('afterbegin', mandala());
-  $('.surya__imgs').innerHTML = SURYA.map(s => `<img src="/assets/${'poses/clean/step-' + String(s.n).padStart(2, '0')}.webp" alt="" ${s.n > 1 ? 'loading="lazy"' : ''}>`).join('');
+  $('.surya__imgs').innerHTML = SURYA.map(s => `<img src="/assets/${'surya/step-' + String(s.n).padStart(2, '0')}.webp" alt="" ${s.n > 1 ? 'loading="lazy"' : ''}>`).join('');
   $('.thumbs').innerHTML = SURYA.map((s, i) => `<li><button data-i="${i}" aria-label="Step ${s.n}: ${s.name}"><img src="/assets/${s.img}" alt=""></button></li>`).join('');
 }
 
@@ -52,7 +51,7 @@ export function scrubSurya(gsap, perStepVh) {
     trigger: stage, start: 'top top', end: () => `+=${perStepVh * SURYA.length}%`, pin: true, scrub: 0.4, anticipatePin: 1,
     onUpdate: self => setStep(Math.floor(self.progress * SURYA.length)),
     onRefresh: self => { trigger = self; } } });
-  tl.to(state.surya, { rays: 0.85, scroll: 1, lift: 0.12 }, 0).fromTo('.surya__mandala', { rotation: 0 }, { rotation: 360 }, 0).fromTo('.surya__sun', { yPercent: 40, scale: 0.8, opacity: 0.6 }, { yPercent: -20, scale: 1.1, opacity: 1 }, 0)
+  tl.to(state.surya, { rays: 0.85, scroll: 1, lift: 0.12 }, 0).fromTo('.surya__mandala', { rotation: 0 }, { rotation: 360 }, 0)
     .fromTo('.surya__stage', { '--tone': 0 }, { '--tone': 1 }, 0)
     .fromTo('.surya__imgs', { y: 6 }, { y: -6 }, 0);
   trigger = tl.scrollTrigger;

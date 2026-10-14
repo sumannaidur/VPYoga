@@ -4,14 +4,13 @@ import { initEnquiry } from './enquiry.js';
 import { buildSurya, wireSuryaControls } from './surya.js';
 import { initScroll, initRail, refresh } from './scroll.js';
 import { state } from './gl/state.js';
-import { applyPhotos, renderCredits } from './photos.js';
 import { webglOK } from './gl/support.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 
 // Programme orbs + footer links. Each programme opens the enquiry form pre-filled (no per-programme pages exist yet).
 $('.orbs').innerHTML = PROGRAMMES.map(p => `<li id="programme-${p.id}"><a class="orb" href="#" data-enquire="${p.title}" aria-label="Enquire about ${p.title}">
-  <img class="orb__img" src="/assets/programmes/${p.img}" alt="" data-photo="prog-${p.id}" data-sizes="170px" data-alt="none" loading="lazy" width="170" height="170"><span class="orb__base" aria-hidden="true"></span>
+  <img class="orb__img" src="/assets/programmes/orb-${p.id}.webp" alt="" loading="lazy" width="190" height="190"><span class="orb__base" aria-hidden="true"></span>
   <h3>${p.title}</h3><small>${p.tag}</small><p>${p.text}</p></a></li>`).join('');
 $('.foot__prog').insertAdjacentHTML('beforeend', PROGRAMMES.map(p => `<a href="#" data-enquire="${p.title}">${p.title}</a>`).join(''));
 
@@ -39,7 +38,6 @@ window.addEventListener('pagehide', () => clearTimeout(timer));
 // A missing image should never leave a broken-image icon.
 document.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.style.visibility = 'hidden'; }, true);
 
-applyPhotos(); renderCredits($('.credits'));
 buildSurya(); wireSuryaControls(); initEnquiry(PROGRAMMES); initRail(); initScroll();
 addEventListener('load', refresh);
 // Lazy images can shift layout after ScrollTrigger measured it; re-measure (debounced).
@@ -56,9 +54,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches && webglOK()) {
     io.observe(host);
   };
   const amb = (sel, stageSel, st, o) => () => import('./gl/ambient.js').then(g => g.ambient($(sel), $(stageSel), st, o));
-  when($('.hero'), amb('#fx-hero', '.hero__stage', state.hero, { count: 320, sun: [0.5, 0.66] }));
-  when($('.surya'), amb('#fx-surya', '.surya__stage', state.surya, { count: 190, sun: [0.5, 0.7] }));
-  when($('.cta'), amb('#fx-cta', '.cta', state.cta, { count: 170, sun: [0.82, 0.74], colors: ['#ffe0a0', '#ff8f3a'] }));
-  when($('.programmes'), () => import('./gl/orbs.js').then(g => g.orbs($('#fx-orbs'), $('.programmes'), [...document.querySelectorAll('.orbs > li')])));
-  when($('.med'), () => import('./gl/lotus.js').then(g => g.lotusScene($('#fx-lotus'), $('.med__stage'), state.lotus)));
+  when($('.hero'), amb('#fx-hero', '.hero__stage', state.hero, { count: 320, sun: [0.61, 0.62] }));
+  when($('.surya'), amb('#fx-surya', '.surya__stage', state.surya, { count: 190, sun: [0.7, 0.66] }));
+  when($('.cta'), amb('#fx-cta', '.cta', state.cta, { count: 170, sun: [0.73, 0.58], colors: ['#ffe0a0', '#ff8f3a'] }));
 }
